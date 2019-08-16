@@ -65,12 +65,18 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                                  aria-expanded="false">Our Services</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                                    
+                                    <li class="nav-item"><span class="nav-link" href="#">Appeals</a></li>
+                                    <li class="nav-item"><span class="nav-link">Bail </a></li>
+                                    <li class="nav-item"><span class="nav-link">Civil </a></li>
+                                    <li class="nav-item"><span class="nav-link">Criminal</a></li>
+                                    <li class="nav-item"><span class="nav-link">Family Law</a></li>
+                                    <li class="nav-item"><span class="nav-link">Popular Cases</a></li>
+                                    <li class="nav-item"><span class="nav-link">Others</a></li>
                                 </ul>
                             </li>
                             
-                            <li class="nav-item"><a class="nav-link" href="signup">Sign Up</a></li>
+                            <li class="nav-item "><a class="nav-link" href="signup">Sign Up</a></li>
                             <li class="nav-item"><a class="nav-link" href="login">Log In</a></li>
                             
                             <li class="nav-item"><a class="nav-link" href="about">About Us</a></li>
@@ -93,10 +99,11 @@
      <body>
         @yield('content')
     </body>
-    <script src="js/jquery-3.3.1.min.js"></script>
+    
   <script src="js/jquery-ui.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/jquery.sticky.js"></script>

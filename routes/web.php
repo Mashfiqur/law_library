@@ -14,12 +14,20 @@
 Route::get('home', function () {
     return view('home');
 });
-Route::get('signup', function () {
-    return view('signup');
-});
-Route::get('login', function () {
-    return view('login');
-});
-
-
-
+Route::get('signup', 'SignupController@show');
+Route::post('signup', 'SignupController@signUp');
+Route::get('login', 'SignupController@loginForm');
+Route::post('login', 'SignupController@login');
+ 
+Route::get('/games', 'GamesController@index');
+ 
+Route::get('/games/create', 'GamesController@create');
+ 
+Route::get('/games/{game}', 'GamesController@show');
+ 
+Route::post('/games', 'GamesController@store');
+ 
+Route::post('/games/{game}/reviews', 'ReviewsController@store');
+ 
+Route::get('register', 'RegistrationController@create');
+Route::post('register', 'RegistrationController@store');
