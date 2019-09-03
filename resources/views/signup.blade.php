@@ -17,7 +17,7 @@
       <li class="nav-item">
           <p class="text-center">Already have an account? <a href="login">Log In</a> </p>
       </li>
-      
+
   </ul>
 
 </div>
@@ -47,7 +47,7 @@
                                   <input type="text" id="last_name" class="form-control" name="last_name">
                               </div>
                           </div>
-                          
+
 
                           <div class="form-group row">
                               <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
@@ -91,9 +91,9 @@
                           </div>
 
 
-                          
 
-                          
+
+
 
                               <div class="col-md-6 offset-md-4">
                                   <button type="submit" class="btn btn-primary">Submit</button>
@@ -101,7 +101,7 @@
                               </div>
                               </form>
                           </div>
-                      
+
                   </div>
               </div>
       </div>

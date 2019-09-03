@@ -16,7 +16,7 @@ class SignupController extends Controller
 
 	// print_r($request->input());
 
-		
+
 
 	/*$validatedData = $request->validate([
 	    'first_name' => 'required',
@@ -31,7 +31,7 @@ class SignupController extends Controller
 	$user->first_name = $request->first_name;
 	$user->last_name = $request->last_name;
 	$user->email = $request->email;
-	$user->password = bcrypt($request->password);
+	$user->password = $request->password;
 	$user->occupation = $request->occupation;
 	$user->phone = $request->phone;
 	$user->save();
@@ -52,19 +52,40 @@ class SignupController extends Controller
 		$email 	  = $request->email;
 		$password = $request->password;
 
-		
+
 
 		$user = User::where('email',$email)
-					->where('password',$password)
 					->first();
+        if(!$user)
+        {
+            return redirect()->back()->withErrors(['No user associated with this email']);
+        }
+        if(Hash::check($password,$user->password))
+        {
+            session(['email' => $email]);
+            session(['name' => $user->first_name]) ;
+            session(['role' => $user->occupation]) ;
+            if($user->occupation=='admin')
+            {
+                return redirect('admin/home');
+            }
+            else
+            {
+                return redirect('/');
+            }
+        }
+        else
+        {
+            return redirect()->back()->withErrors(['Wrong Email/Password']);
 
-		return 'Hello '.$user->first_name;
+        }
+
 
 
 	}
-    
-    
+
+
 }
-   
+
 
 

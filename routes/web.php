@@ -11,23 +11,20 @@
 |
 */
 
-Route::get('home', function () {
+Route::get('/', function () {
     return view('home');
 });
 Route::get('signup', 'SignupController@show');
 Route::post('signup', 'SignupController@signUp');
 Route::get('login', 'SignupController@loginForm');
 Route::post('login', 'SignupController@login');
- 
-Route::get('/games', 'GamesController@index');
- 
-Route::get('/games/create', 'GamesController@create');
- 
-Route::get('/games/{game}', 'GamesController@show');
- 
-Route::post('/games', 'GamesController@store');
- 
-Route::post('/games/{game}/reviews', 'ReviewsController@store');
- 
-Route::get('register', 'RegistrationController@create');
-Route::post('register', 'RegistrationController@store');
+Route::group(['middleware' => ['customer_auth']], function () {
+
+});
+
+Route::group(['middleware' => ['admin_auth'], 'prefix' => 'admin'], function () {
+
+        Route::get('/home', 'AdminController@index');
+
+
+});

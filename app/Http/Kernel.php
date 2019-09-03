@@ -2,6 +2,9 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\admin_auth;
+use App\Http\Middleware\PartnerAuth;
+use App\Http\Middleware\user_auth;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -35,11 +38,18 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+
         ],
 
         'api' => [
             'throttle:60,1',
             'bindings',
+        ],
+        'admin_auth' => [
+            admin_auth::class
+        ],
+        'user_auth' => [
+            user_auth::class
         ],
     ];
 
