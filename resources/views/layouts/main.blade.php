@@ -59,7 +59,7 @@
                         <button class="btn btn-primary">Search</button>
                     </li>
 
-                <li class="nav-item active"><a class="nav-link" href="home">Home</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
 
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -76,9 +76,11 @@
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="about">About Us</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact">Contact Us</a></li>
+
                             @if(session('name'))
-                                <li class="nav-item "><a class="nav-link">{{session('name')}}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="cases">Cases</a></li>
+                                <li class="nav-item"><a class="nav-link font-weight-bold" href="logout">
+                                        <i class="fa fa-power-off"></i> Logout ({{session('name')}})</a></li>
                             @else
                                 <li class="nav-item "><a class="nav-link" href="signup">Sign Up</a></li>
                                 <li class="nav-item"><a class="nav-link" href="login">Log In</a></li>

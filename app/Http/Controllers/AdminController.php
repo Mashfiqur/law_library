@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\LawCase;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use UxWeb\SweetAlert\SweetAlert;
 
@@ -35,7 +37,7 @@ class AdminController extends Controller
     public function editCategory(Request $request)
     {
         $category = Category::find($request->id);
-        return view('admin.case_edit',compact('category'));
+        return view('admin.law_case_edit',compact('category'));
     }
     public function updateCategory(Request $request)
     {
@@ -49,56 +51,81 @@ class AdminController extends Controller
     {
         $category = Category::find($request->id);
 
-        if($category->cases)
+        if($category->LawCases)
         {
-            foreach ($category->cases as $case)
+            foreach ($category->LawCases as $law_case)
             {
-                $case->delete();
+                $law_case->delete();
             }
         }
         $category->delete();
         SweetAlert::success('Category Deleted', 'Category Deleted');
         return redirect('admin/categories');
     }
-    public function cases()
+    public function LawCases()
     {
-        $cases = Category::all();
-        return view('admin.cases', compact('cases'));
+        $law_cases = LawCase::all();
+        $categories = Category::all();
+        return view('admin.law_cases', compact('law_cases','categories'));
     }
-    public function addCase()
+    public function addLawCase()
     {
-        return view('admin.case_add');
+        $categories = Category::all();
+        return view('admin.law_case_add',compact('categories'));
     }
 
-    public function postCase(Request $request)
+    public function postLawCase(Request $request)
     {
-        $case = new Case();
-        $case->name = $request->name;
-        $case->save();
-        SweetAlert::success('Case Created', $case->name.' has been added');
-        return redirect('admin/cases');
+        $law_case = new LawCase();
+        $law_case->title = $request->title;
+        $law_case->category_id = $request->category_id;
+        $law_case->description = $request->description;
+        if($request->pdf)
+        {
+            $fileName = $request->file('pdf');
+            $fileName = time().'.'.$fileName->getClientOriginalExtension();
+            $request->pdf->move(public_path('/pdfs'), $fileName);
+            $law_case->pdf = $fileName;
+        }
+        $law_case->created_by = session('name');
+        $law_case->updated_by = session('name');
+        $law_case->save();
+        SweetAlert::success('LawCase Created', $law_case->title.' has been added');
+        return redirect('admin/law-cases');
     }
-    public function editCase(Request $request)
+    public function editLawCase(Request $request)
     {
-        $case = Case::find($request->id);
-        return view('admin.case_edit',compact('case'));
+        $law_case = LawCase::find($request->id);
+        $categories = Category::all();
+        return view('admin.law_case_edit',compact('law_case', 'categories'));
     }
-    public function updateCase(Request $request)
+    public function updateLawCase(Request $request)
     {
-        $case = Case::find($request->id);
-        $case->name = $request->name;
-        $case->update();
-        SweetAlert::success('Case Edited', 'Case Edited');
-        return redirect('admin/cases');
+        $law_case = LawCase::find($request->id);
+        $law_case->title = $request->title;
+        $law_case->category_id = $request->category_id;
+        $law_case->description = $request->description;
+        if($request->pdf)
+        {
+            $fileName = $request->file('pdf');
+            $fileName = time().'.'.$fileName->getClientOriginalExtension();
+            $request->pdf->move(public_path('/pdfs'), $fileName);
+            $law_case->pdf = $fileName;
+        }
+        $law_case->created_by = session('name');
+        $law_case->updated_by = session('name');
+        $law_case->update();
+        SweetAlert::success('LawCase Edited', 'LawCase Edited');
+        return redirect('admin/law-cases');
     }
-    public function deleteCase(Request $request)
+    public function deleteLawCase(Request $request)
     {
-        $case = Case::find($request->id);
+        $law_case = LawCase::find($request->id);
 
 
-        $case->delete();
-        SweetAlert::success('Case Deleted', 'Case Deleted');
-        return redirect('admin/cases');
+        $law_case->delete();
+        SweetAlert::success('LawCase Deleted', 'LawCase Deleted');
+        return redirect('admin/law-cases');
     }
 
     public function logout()

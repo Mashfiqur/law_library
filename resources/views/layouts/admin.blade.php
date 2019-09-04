@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{URL::to('/')}}/css/aos.css">
 
     <link rel="stylesheet" href="{{URL::to('/')}}/css/style1.css">
+
     <style>
         .sticky-wrapper .site-navbar {
             background: #4c4c4c;
@@ -71,7 +72,7 @@
                     <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block text-white">
 
                         <li class="nav-item"><a class="nav-link" href="categories"><i class="fa fa-barcode"></i> Categories</a></li>
-                        <li class="nav-item"><a class="nav-link" href="cases"><i class="fa fa-bars"></i> Cases</a></li>
+                        <li class="nav-item"><a class="nav-link" href="law-cases"><i class="fa fa-bars"></i> Cases</a></li>
                         @if(session('name'))
                             <li class="nav-item"><a class="nav-link font-weight-bold" href="logout">
                                     <i class="fa fa-power-off"></i> Logout ({{session('name')}})</a></li>

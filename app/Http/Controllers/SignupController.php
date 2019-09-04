@@ -71,7 +71,7 @@ class SignupController extends Controller
             }
             else
             {
-                return redirect('/');
+                return redirect('cases');
             }
         }
         else

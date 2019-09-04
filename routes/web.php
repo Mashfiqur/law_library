@@ -22,15 +22,31 @@ Route::group(['middleware' => ['customer_auth']], function () {
 
 });
 
+Route::group(['middleware' => ['user_auth']], function () {
+    Route::get('/cases', 'UserController@index');
+    Route::get('/case/{id}', 'UserController@caseShow');
+    Route::get('/logout', 'UserController@logout');
+
+});
+
 Route::group(['middleware' => ['admin_auth'], 'prefix' => 'admin'], function () {
 
         Route::get('/home', 'AdminController@index');
+
         Route::get('/categories', 'AdminController@categories');
         Route::get('/add-category', 'AdminController@addCategory');
         Route::post('/add-category', 'AdminController@postCategory');
         Route::get('/edit-category/{id}', 'AdminController@editCategory');
         Route::post('/update-category/{id}', 'AdminController@updateCategory');
         Route::get('/delete-category/{id}', 'AdminController@deleteCategory');
+
+        Route::get('/law-cases', 'AdminController@LawCases');
+        Route::get('/add-law_case', 'AdminController@addLawCase');
+        Route::post('/add-law_case', 'AdminController@postLawCase');
+        Route::get('/edit-law_case/{id}', 'AdminController@editLawCase');
+        Route::post('/update-law_case/{id}', 'AdminController@updateLawCase');
+        Route::get('/delete-law_case/{id}', 'AdminController@deleteLawCase');
+
         Route::get('/logout', 'AdminController@logout');
 
 });
