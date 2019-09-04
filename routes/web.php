@@ -25,6 +25,12 @@ Route::group(['middleware' => ['customer_auth']], function () {
 Route::group(['middleware' => ['admin_auth'], 'prefix' => 'admin'], function () {
 
         Route::get('/home', 'AdminController@index');
-
+        Route::get('/categories', 'AdminController@categories');
+        Route::get('/add-category', 'AdminController@addCategory');
+        Route::post('/add-category', 'AdminController@postCategory');
+        Route::get('/edit-category/{id}', 'AdminController@editCategory');
+        Route::post('/update-category/{id}', 'AdminController@updateCategory');
+        Route::get('/delete-category/{id}', 'AdminController@deleteCategory');
+        Route::get('/logout', 'AdminController@logout');
 
 });

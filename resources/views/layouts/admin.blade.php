@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="{{URL::to('/')}}/css/jquery-ui.css">
     <link rel="stylesheet" href="{{URL::to('/')}}/css/owl.carousel.min.css">
     <link rel="stylesheet" href="{{URL::to('/')}}/css/owl.theme.default.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
     <link rel="stylesheet" href="{{URL::to('/')}}/css/bootstrap-datepicker.css">
 
@@ -25,19 +28,25 @@
     <link rel="stylesheet" href="{{URL::to('/')}}/css/style1.css">
     <style>
         .sticky-wrapper .site-navbar {
-            background: #bfbfbf;
+            background: #4c4c4c;
         }
         .sticky-wrapper.is-sticky .site-navbar {
-            background: #bfbfbf;
+            background: #4c4c4c;
+        }
+        .sticky-wrapper.is-sticky .site-navbar ul li a {
+            color: white !important;
+        }
+        .site-navbar .site-navigation .site-menu > li > a {
+            color: white;
         }
     </style>
 
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-<div class="site-wrap"  id="home-section">
+<div class="site-wrap "  id="home-section">
 
-    <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu site-navbar-target text-white">
         <div class="site-mobile-menu-header">
             <div class="site-mobile-menu-close mt-3">
                 <span class="icon-close2 js-menu-toggle"></span>
@@ -47,48 +56,29 @@
     </div>
 
 
-    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+    <header class="site-navbar js-sticky-header site-navbar-target text-white" role="banner">
 
         <div class="container">
             <div class="row align-items-center position-relative">
 
 
                 <div class="site-logo">
-                    <a href="home" class="text-black"><span class="text-primary">Law Library</a>
+                    <a class="text-white" href="home">ADMIN Law Library</a>
                 </div>
 
-                <nav class="site-navigation text-center ml-auto" role="navigation">
+                <nav class="site-navigation text-center  ml-auto" role="navigation">
 
-                    <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                        <li >
+                    <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block text-white">
 
-                            <input type="text" style="height: 2.5rem;width: 17rem" placeholder="Search Anything">
-
-                            <button class="btn btn-primary">Search</button>
-                        </li>
-
-                        <li class="nav-item active"><a class="nav-link" href="home">Home</a></li>
-
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">Our Services</a>
-                            <ul class="dropdown-menu">
-
-                                <li class="nav-item"><a class="nav-link" href="#">Appeals</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Bail </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Civil </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Criminal</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Family Law</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Popular Cases</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Others</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item "><a class="nav-link" href="signup">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login">Log In</a></li>
-
-                        <li class="nav-item"><a class="nav-link" href="about">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="categories"><i class="fa fa-barcode"></i> Categories</a></li>
+                        <li class="nav-item"><a class="nav-link" href="cases"><i class="fa fa-bars"></i> Cases</a></li>
+                        @if(session('name'))
+                            <li class="nav-item"><a class="nav-link font-weight-bold" href="logout">
+                                    <i class="fa fa-power-off"></i> Logout ({{session('name')}})</a></li>
+                        @else
+                            <li class="nav-item "><a class="nav-link" href="signup">Sign Up</a></li>
+                            <li class="nav-item"><a class="nav-link" href="login">Log In</a></li>
+                        @endif
                     </ul>
                 </nav>
 
@@ -97,9 +87,7 @@
                 <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
             </div>
-
-
-
+        </div>
 
     </header>
 
@@ -123,6 +111,16 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Include this after the sweet alert js file -->
+    @include('sweet::alert')
+    <script>
+        $(document).ready( function () {
+            $('#table').DataTable();
+        } );
+    </script>
 </html>
 
 

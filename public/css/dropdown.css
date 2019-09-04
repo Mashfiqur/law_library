@@ -45,6 +45,5 @@
 /* Other styles for the page not related to the animated dropdown */
 
 body {
-  background: #007bff;
-  background: linear-gradient(to right, #3e3e3e, #2a6992);
+    background-color: #e4e5e6;
 }
