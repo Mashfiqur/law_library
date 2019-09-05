@@ -58,8 +58,12 @@
 
                         <button class="btn btn-primary">Search</button>
                     </li>
-
+                @if(session('role')=='admin')
+                <li class="nav-item"><a class="nav-link text-secondary" href={{url('/admin/home')}}>Admin Home</a></li>
+                @else
                 <li class="nav-item active"><a class="nav-link" href={{url('/')}}>Home</a></li>
+                @endif
+                
 
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"

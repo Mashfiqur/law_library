@@ -37,6 +37,9 @@ class SignupController extends Controller
 	$user->occupation = $request->occupation;
 	$user->phone = $request->phone;
 	$user->save();
+	session(['email' => $user->email]);
+    session(['name' => $user->first_name]) ;
+    session(['role' => $user->occupation]) ;
 
 	return redirect('cases');
 

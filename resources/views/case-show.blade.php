@@ -10,7 +10,7 @@
                             <h6 class="text-secondary">Uploaded By: <b>{{$case->created_by}}</b></h6>
                             <h6 class="text-secondary">Uploading Time: <b>{{$case->created_at->format('M d Y H:m:s')}}</b></h6>
                             <p>{{$case->description}}</p>
-                            <a  target="_blank" href="{{ asset('/pdfs/'.$case->pdf) }}">Download PDF</a>
+                            <a  target="_blank" href="{{ asset('/pdfs/'.$case->pdf) }}">Download Full File as a PDF</a>
 
                         </div>
                     </div>

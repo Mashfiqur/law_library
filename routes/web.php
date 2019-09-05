@@ -11,7 +11,6 @@
 |
 */
 
-use App\Category;
 
 Route::get('/', 'UserController@home');
 Route::get('signup', 'SignupController@show');

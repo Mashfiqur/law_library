@@ -70,7 +70,7 @@
                 <nav class="site-navigation text-center  ml-auto" role="navigation">
 
                     <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block text-white">
-
+                        <li class="nav-item active"><a class="nav-link" href={{url('/')}}>User Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url('/admin/categories')}}"><i class="fa fa-barcode"></i> Categories</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url('/admin/law-cases')}}">Cases</a></li>
                         @if(session('name'))

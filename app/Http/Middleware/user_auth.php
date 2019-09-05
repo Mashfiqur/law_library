@@ -15,6 +15,12 @@ class user_auth
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(session('role')){
+            return $next($request);
+        }
+        else
+        {
+            return redirect('/');
+        }
     }
 }

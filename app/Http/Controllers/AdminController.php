@@ -112,7 +112,6 @@ class AdminController extends Controller
             $request->pdf->move(public_path('/pdfs'), $fileName);
             $law_case->pdf = $fileName;
         }
-        $law_case->created_by = session('name');
         $law_case->updated_by = session('name');
         $law_case->update();
         SweetAlert::success('LawCase Edited', 'LawCase Edited');

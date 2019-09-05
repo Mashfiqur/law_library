@@ -20,13 +20,13 @@
         <div class="container-fluid">
             <div class="row m-3">
                 @foreach($cases as $case)
-                    <div class="col-4">
-                        <div class="card m-3">
+                    <div class="col-4 mb-3">
+                        <div class="card h-100 m-3">
                             <div class="card-body">
                                 <h3>{{$case->title}}</h3>
                                 <p>{{substr($case->description,0,200)}}</p>
                                 <p class="text-secondary">Category: <b>{{$case->category->name}}</b></p>
-                                <a class="text-primary float-right" href="{{'case/'.$case->id}}">Read More >> </a>
+                                <a class="text-primary float-right" href="{{url('case/'.$case->id)}}">Read More >> </a>
                             </div>
                         </div>
                     </div>
