@@ -2,7 +2,7 @@
 @section('content')
     <style>
         .responsive-header-img {
-            background-image: url('images/supreme_court.jpg');
+            background-image: url({{url('images/supreme_court.jpg')}});
         }
         .site-header {
             position: relative;

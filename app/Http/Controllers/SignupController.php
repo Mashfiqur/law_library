@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Category;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
@@ -9,7 +10,8 @@ class SignupController extends Controller
 {
 	public function show()
 	{
-		return view ('signup');
+        $categories = Category::all();
+		return view ('signup',compact('categories'));
 	}
 	public function signUp(Request $request)
 	{
@@ -36,7 +38,7 @@ class SignupController extends Controller
 	$user->phone = $request->phone;
 	$user->save();
 
-	return 'User Account Created';
+	return redirect('cases');
 
 
 	}
@@ -44,7 +46,8 @@ class SignupController extends Controller
 
 	public function loginForm()
 	{
-		return view('login');
+        $categories = Category::all();
+		return view('login',compact('categories'));
 	}
 
 	public function login(Request $request)

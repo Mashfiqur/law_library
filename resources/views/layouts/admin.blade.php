@@ -64,21 +64,21 @@
 
 
                 <div class="site-logo">
-                    <a class="text-white" href="home">ADMIN Law Library</a>
+                    <a class="text-white" href="{{url('/admin/home')}}">ADMIN Law Library</a>
                 </div>
 
                 <nav class="site-navigation text-center  ml-auto" role="navigation">
 
                     <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block text-white">
 
-                        <li class="nav-item"><a class="nav-link" href="categories"><i class="fa fa-barcode"></i> Categories</a></li>
-                        <li class="nav-item"><a class="nav-link" href="law-cases"><i class="fa fa-bars"></i> Cases</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url('/admin/categories')}}"><i class="fa fa-barcode"></i> Categories</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url('/admin/law-cases')}}">Cases</a></li>
                         @if(session('name'))
-                            <li class="nav-item"><a class="nav-link font-weight-bold" href="logout">
+                            <li class="nav-item"><a class="nav-link font-weight-bold" href="{{url('/logout')}}">
                                     <i class="fa fa-power-off"></i> Logout ({{session('name')}})</a></li>
                         @else
-                            <li class="nav-item "><a class="nav-link" href="signup">Sign Up</a></li>
-                            <li class="nav-item"><a class="nav-link" href="login">Log In</a></li>
+                            <li class="nav-item "><a class="nav-link" href="{{url('/signup')}}">Sign Up</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{url('/login')}}">Log In</a></li>
                         @endif
                     </ul>
                 </nav>

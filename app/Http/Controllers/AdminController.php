@@ -37,7 +37,7 @@ class AdminController extends Controller
     public function editCategory(Request $request)
     {
         $category = Category::find($request->id);
-        return view('admin.law_case_edit',compact('category'));
+        return view('admin.category_edit',compact('category'));
     }
     public function updateCategory(Request $request)
     {
