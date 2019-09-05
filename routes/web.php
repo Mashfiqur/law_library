@@ -11,19 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+use App\Category;
+
+Route::get('/', 'UserController@home');
 Route::get('signup', 'SignupController@show');
 Route::post('signup', 'SignupController@signUp');
 Route::get('login', 'SignupController@loginForm');
 Route::post('login', 'SignupController@login');
-Route::group(['middleware' => ['customer_auth']], function () {
 
-});
 
 Route::group(['middleware' => ['user_auth']], function () {
     Route::get('/cases', 'UserController@index');
+    Route::get('/cases/category/{id}', 'UserController@casesByCategory');
     Route::get('/case/{id}', 'UserController@caseShow');
     Route::get('/logout', 'UserController@logout');
 

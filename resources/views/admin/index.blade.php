@@ -11,7 +11,7 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-12 col-lg-7 text-center">
-                        <h1>Admin Homey</h1>
+                        <h1>Admin Home</h1>
                         <p class="text-white">An online platform with enriched database of legal cases of Bangladesh</p>
                         <p><a href="login" class="btn btn-white-outline border-w-2 btn-md">Log In</a></p>
                     </div>

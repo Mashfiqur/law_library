@@ -46,7 +46,7 @@
 
 
             <div class="site-logo">
-              <a href="home" class="text-black"><span class="text-primary">Law Library</a>
+              <a href="{{url('/')}}" class="text-black"><span class="text-primary">Law Library</a>
             </div>
 
               <nav class="site-navigation text-center ml-auto" role="navigation">
@@ -59,31 +59,27 @@
                         <button class="btn btn-primary">Search</button>
                     </li>
 
-                <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item active"><a class="nav-link" href={{url('/')}}>Home</a></li>
 
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                                 aria-expanded="false">Our Services</a>
+                                 aria-expanded="false">Categories</a>
                                 <ul class="dropdown-menu">
+                                    @foreach($categories as $category)
+                                        <li class="nav-item"><a class="nav-link" href="{{url('cases/category/'.$category->id)}}">{{$category->name}}</a></li>
+                                    @endforeach
 
-                                    <li class="nav-item"><a class="nav-link" href="#">Appeals</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Bail </a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Civil </a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Criminal</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Family Law</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Popular Cases</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Others</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="about">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{url('/')}}">About Us</a></li>
 
                             @if(session('name'))
-                            <li class="nav-item"><a class="nav-link" href="cases">Cases</a></li>
-                                <li class="nav-item"><a class="nav-link font-weight-bold" href="logout">
+                            <li class="nav-item"><a class="nav-link" href="{{url('/cases')}}">Cases</a></li>
+                                <li class="nav-item"><a class="nav-link font-weight-bold" href="{{url('/logout')}}">
                                         <i class="fa fa-power-off"></i> Logout ({{session('name')}})</a></li>
                             @else
-                                <li class="nav-item "><a class="nav-link" href="signup">Sign Up</a></li>
-                                <li class="nav-item"><a class="nav-link" href="login">Log In</a></li>
+                                <li class="nav-item "><a class="nav-link" href="{{url('/signup')}}">Sign Up</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{url('/login')}}">Log In</a></li>
                             @endif
                 </ul>
               </nav>
