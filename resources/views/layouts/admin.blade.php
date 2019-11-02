@@ -64,7 +64,7 @@
 
 
                 <div class="site-logo">
-                    <a class="text-white" href="{{url('/admin/home')}}">ADMIN Law Library</a>
+                    <a class="text-white" href="{{url('/admin/home')}}">ADMIN Portal</a>
                 </div>
 
                 <nav class="site-navigation text-center  ml-auto" role="navigation">

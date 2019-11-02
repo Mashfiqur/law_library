@@ -2,7 +2,7 @@
 @section('content')
     <style>
         .responsive-header-img {
-            background-image: url({{url('images/supreme_court.jpg')}});
+            background-image: url({{url('images/Law_cases.jpg')}});
         }
         .site-header {
             position: relative;
@@ -20,8 +20,8 @@
         <div class="container-fluid">
             <div class="row m-3">
                 @foreach($cases as $case)
-                    <div class="col-4 mb-3">
-                        <div class="card h-100 m-3">
+                    <div class="col-10 mb-3">
+                        <div class="card h-100 m-1">
                             <div class="card-body">
                                 <h3>{{$case->title}}</h3>
                                 <p>{{substr($case->description,0,200)}}</p>

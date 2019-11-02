@@ -41,6 +41,7 @@
 
     <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
 
+
       <div class="container">
         <div class="row align-items-center position-relative">
 
@@ -49,9 +50,13 @@
               <a href="{{url('/')}}" class="text-black"><span class="text-primary">Law Library</a>
             </div>
 
-              <nav class="site-navigation text-center ml-auto" role="navigation">
 
-                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+              
+                <nav class="site-navigation text-center ml-auto" role="navigation">
+          
+            <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+
+                
                     <li >
 
                         <input type="text" style="height: 2.5rem;width: 17rem" placeholder="Search Anything">
@@ -61,6 +66,7 @@
                 @if(session('role')=='admin')
                 <li class="nav-item"><a class="nav-link text-secondary" href={{url('/admin/home')}}>Admin Home</a></li>
                 @else
+
                 <li class="nav-item active"><a class="nav-link" href={{url('/')}}>Home</a></li>
                 @endif
                 
@@ -75,7 +81,7 @@
 
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="{{url('/')}}">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{url('/about')}}">About Us</a></li>
 
                             @if(session('name'))
                             <li class="nav-item"><a class="nav-link" href="{{url('/cases')}}">Cases</a></li>
@@ -85,6 +91,8 @@
                                 <li class="nav-item "><a class="nav-link" href="{{url('/signup')}}">Sign Up</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{url('/login')}}">Log In</a></li>
                             @endif
+                            </li>
+                            
                 </ul>
               </nav>
 
