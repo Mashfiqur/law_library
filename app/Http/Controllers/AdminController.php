@@ -79,6 +79,15 @@ class AdminController extends Controller
         $law_case = new LawCase();
         $law_case->title = $request->title;
         $law_case->category_id = $request->category_id;
+        $law_case->case_number = $request->case_number;
+        $law_case->year = $request->year;
+        $law_case->judges = $request->judges;
+        $law_case->petitioner = $request->petitioner;
+        $law_case->opposite_parties = $request->opposite_parties;
+        $law_case->judges_for_petitioner = $request->judges_for_petitioner;
+        $law_case->judges_for_opposite = $request->judges_for_opposite;
+        $law_case->heard_on = $request->heard_on;
+        $law_case->judgement_on = $request->judgement_on;
         $law_case->description = $request->description;
         if($request->pdf)
         {
@@ -103,7 +112,15 @@ class AdminController extends Controller
     {
         $law_case = LawCase::find($request->id);
         $law_case->title = $request->title;
-        $law_case->category_id = $request->category_id;
+        $law_case->case_number = $request->case_number;
+        $law_case->year = $request->year;
+        $law_case->judges = $request->judges;
+        $law_case->petitioner = $request->petitioner;
+        $law_case->opposite_parties = $request->opposite_parties;
+        $law_case->judges_for_petitioner = $request->judges_for_petitioner;
+        $law_case->judges_for_opposite = $request->judges_for_opposite;
+        $law_case->heard_on = $request->heard_on;
+        $law_case->judgement_on = $request->judgement_on;
         $law_case->description = $request->description;
         if($request->pdf)
         {

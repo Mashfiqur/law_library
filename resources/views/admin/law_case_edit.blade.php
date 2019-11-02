@@ -26,6 +26,66 @@
                                     </select>
                                 </div>
                                 <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Case Number: </label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="case_number"
+                                        {{$law_case->case_number}}></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Year: </label>
+                                    <div class="col-md-6">
+                                        <input type="number" name="year"
+                                            {{$law_case->year}}></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Judges: </label>
+                                    <div class="col-md-6">
+                                         <input type="text" name="judges"
+                                         {{$law_case->judges}}></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Petitioners: </label>
+                                    <div class="col-md-6">
+                                         <input type="text" name="petitioner"
+                                         {{$law_case->petitioner}}></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Opposite Parties: </label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="opposite_parties"{{$law_case->opposite_parties}}></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Judges For Petitioner: </label>
+                                    <div class="col-md-6">
+                                        <textarea name="judges_for_petitioner"{{$law_case->judges_for_petitioner}}></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Judges For Opposite parties: </label>
+                                    <div class="col-md-6">
+                                        <textarea name="judges_for_opposite"{{$law_case->judges_for_opposite}}></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Heard On: </label>
+                                    <div class="col-md-6">
+                                        <textarea name="heard_on"
+                                        {{$law_case->heard_on}}></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Judgement On: </label>
+                                    <div class="col-md-6">
+                                         <textarea name="judgement_on"
+                                         {{$law_case->judgement_on}}></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label class="col-md-4 col-form-label text-md-right">Description</label>
                                     <div class="col-md-6">
                                         <textarea name="description" rows="5" cols="35">{{$law_case->description}}></textarea>

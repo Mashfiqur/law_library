@@ -21,8 +21,8 @@ class AddNewFieldsToLawCases extends Migration
             $table->string('opposite_parties');
             $table->string('judges_for_petitioner');
             $table->string('judges_for_opposite');
-            $table->datetime('heard_on');
-            $table->datetime('judgement_on');
+            $table->string('heard_on');
+            $table->string('judgement_on');
 
 
 

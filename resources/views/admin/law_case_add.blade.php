@@ -26,7 +26,62 @@
                         </select>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-4 col-form-label text-md-right">Description</label>
+                        <label class="col-md-4 col-form-label text-md-right">Case Number: </label>
+                        <div class="col-md-6">
+                            <input type="text" name="case_number">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Year: </label>
+                        <div class="col-md-6">
+                            <input type="number" name="year">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Judges: </label>
+                        <div class="col-md-6">
+                            <input type="text" name="judges">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Petitioners: </label>
+                        <div class="col-md-6">
+                            <input type="text" name="petitioner">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Opposite Parties: </label>
+                        <div class="col-md-6">
+                           <input type="text" name="opposite_parties">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Judges For Petitioner: </label>
+                        <div class="col-md-6">
+                            <textarea name="judges_for_petitioner"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Judges For Opposite parties: </label>
+                        <div class="col-md-6">
+                            <textarea name="judges_for_opposite"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Heard On: </label>
+                        <div class="col-md-6">
+                            <textarea name="heard_on"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Judgement On: </label>
+                        <div class="col-md-6">
+                            <textarea name="judgement_on"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Description: </label>
                         <div class="col-md-6">
                             <textarea name="description"></textarea>
                         </div>

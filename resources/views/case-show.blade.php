@@ -1,24 +1,26 @@
 @extends('layouts.main')
 @section('content')
+
+ 
         <div class="container mt-3">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-body">
                             <h3>{{$case->title}}</h3>
-                            <h6 class="text-secondary">Category: <b>{{$case->category->name}}</b></h6>
-                            <h6 class="text-secondary">Uploaded By: <b>{{$case->created_by}}</b></h6>
-                            <h6 class="text-secondary">Uploading Time: <b>{{$case->created_at->format('M d Y H:m:s')}}</b></h6>
-                            <h6 class="text-secondary">Case Number: <b>{{$case->category->name}}</b></h6>
-                            <h6 class="text-secondary">Year: <b>{{$case->category->name}}</b></h6>
-                            <h6 class="text-secondary">Judges: <b>{{$case->category->name}}</b></h6>
-                            <h6 class="text-secondary">Petitioner: <b>{{$case->category->name}}</b></h6>
-                            <h6 class="text-secondary">Opposite-Parties: <b>{{$case->category->name}}</b></h6>
-                            <h6 class="text-secondary">Judges for the Petitioner: <b>{{$case->category->name}}</b></h6>
-                            <h6 class="text-secondary">Judges for the Opposite Party : <b>{{$case->category->name}}</b></h6>
-                            <h6 class="text-secondary">Heard On: <b>{{$case->category->name}}</b></h6>
-                            <h6 class="text-secondary">Judgment : <b>{{$case->category->name}}</b></h6>
-                            <h6 class="text-secondary">Summary: <b>{{$case->category->name}}</b></h6>
+                            <h5 class="text-secondary"><b>Category: </b>{{$case->category->name}}</h5>
+                            <h5 class="text-secondary"><b>Uploaded By: </b>{{$case->created_by}}</h5>
+                            <h5 class="text-secondary"><b>Uploading Time: </b>{{$case->created_at->format('M d Y H:m:s')}}</h5>
+                            <h5 class="text-secondary"><b>Case Number: </b>{{$case->case_number}}</h5>
+                            <h5 class="text-secondary"><b>Year: </b>{{$case->year}}</h5>
+                            <h5 class="text-secondary"><b>Judges: </b>{{$case->judges}}</h5>
+                            <h5 class="text-secondary"><b>Petitioner: </b>{{$case->petitioner}}</h5>
+                            <h5 class="text-secondary"><b>Opposite-Parties: </b>{{$case->opposite_parties}}</h5>
+                            <h5 class="text-secondary"><b>Judges for the Petitioner: </b>{{$case->judges_for_petitioner}}</h5>
+                            <h5 class="text-secondary"><b>Judges for the Opposite Party : </b>{{$case->judges_for_opposite}}</h5>
+                            <h5 class="text-secondary"><b>Heard On: </b>{{$case->heard_on}}</h5>
+                            <h5 class="text-secondary"><b>Judgment : </b>{{$case->judgement_on}}</h5>
+                            <h5 class="text-secondary"><b>Summary: </b>{{$case->category->name}}</h5>
                             
 
                             
@@ -31,4 +33,3 @@
         </div>
 
 @endsection
-<p>{{$case->description}}</p>
