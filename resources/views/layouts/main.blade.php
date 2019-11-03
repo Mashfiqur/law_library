@@ -47,16 +47,17 @@
 
 
             <div class="site-logo">
+                <img src="{{URL::to('/')}}/images/lawlogo.png" style="width: 50px">
               <a href="{{url('/')}}" class="text-black"><span class="text-primary">Law Library</a>
             </div>
 
 
-              
+
                 <nav class="site-navigation text-center ml-auto" role="navigation">
-          
+
             <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
 
-                
+
                     <li >
 
                         <input type="text" style="height: 2.5rem;width: 17rem" placeholder="Search Anything">
@@ -69,7 +70,7 @@
 
                 <li class="nav-item active"><a class="nav-link" href={{url('/')}}>Home</a></li>
                 @endif
-                
+
 
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -92,7 +93,7 @@
                                 <li class="nav-item"><a class="nav-link" href="{{url('/login')}}">Log In</a></li>
                             @endif
                             </li>
-                            
+
                 </ul>
               </nav>
 

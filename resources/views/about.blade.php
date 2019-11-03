@@ -19,7 +19,7 @@
   	 	  	  	  <p>PhD, Electrical and Electronic Engineering, Queen Mary University of London, UK</p>
   	 	  	  </div>
   	 	  </div>
-  	 	  
+
   	 	  <div class="card">
   	 	  	  <div class="box">
   	 	  	  	  <img src="images/Mashfiqur.jpg" alt="team img" />
@@ -39,7 +39,7 @@
   	 	  </div>
   	 	  <div class="card">
   	 	  	  <div class="box">
-  	 	  	  	  <img src="Awlad.jpg" alt="team img" />
+  	 	  	  	  <img src="images/Awlad.jpg" alt="team img" />
   	 	  	  	  <h4>Awlad Hossain</h4>
   	 	  	  	  <h5>Admin</h5>
   	 	  	  	  <p>Student of Electrical and Computer Engineering department, North South University, Dhaka</p>

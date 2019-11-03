@@ -17,6 +17,7 @@ Route::get('signup', 'SignupController@show');
 Route::post('signup', 'SignupController@signUp');
 Route::get('login', 'SignupController@loginForm');
 Route::post('login', 'SignupController@login');
+Route::get('about', 'UserController@about');
 
 
 Route::group(['middleware' => ['user_auth']], function () {

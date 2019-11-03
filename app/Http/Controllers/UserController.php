@@ -44,4 +44,10 @@ class UserController extends Controller
         Session::flush();
         return redirect('/');
     }
+    public function about()
+    {
+        $cases = LawCase::all();
+        $categories = Category::all();
+        return view('about',compact('cases','categories'));
+    }
 }
