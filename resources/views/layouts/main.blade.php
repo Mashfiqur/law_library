@@ -48,7 +48,7 @@
 
             <div class="site-logo">
                 <img src="{{URL::to('/')}}/images/lawlogo.png" style="width: 50px">
-              <a href="{{url('/')}}" class="text-black"><span class="text-primary">Law Library</a>
+              <a href="{{url('/')}}" class="text-black"><span class="text-primary"><i>Law Library</i></a>
             </div>
 
 
@@ -60,7 +60,7 @@
 
                     <li >
 
-                        <input type="text" style="height: 2.5rem;width: 17rem" placeholder="Search Anything">
+                        <input type="text" style="height: 2.2rem;width: 22rem" placeholder="Search Anything">
 
                         <button class="btn btn-primary">Search</button>
                     </li>

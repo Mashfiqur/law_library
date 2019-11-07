@@ -20,7 +20,7 @@
                             <h5 class="text-secondary"><b>Judges for the Opposite Party : </b>{{$case->judges_for_opposite}}</h5>
                             <h5 class="text-secondary"><b>Heard On: </b>{{$case->heard_on}}</h5>
                             <h5 class="text-secondary"><b>Judgment : </b>{{$case->judgement_on}}</h5>
-                            <h5 class="text-secondary"><b>Summary: </b>{{$case->category->name}}</h5>
+                            <h5 class="text-secondary"><b>Summary: </b>{{$case->description}}</h5>
                             
 
                             
