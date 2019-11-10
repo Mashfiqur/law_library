@@ -64,7 +64,53 @@
             min-height: 400px;
         }
     }*/
+
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 50%;
+  padding: 200 100px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 75px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 220px;
+  }
+}
+
+
 </style>
+
+
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -96,14 +142,24 @@
       <div class="site-section-cover overlay img-bg-section" style="background-image: url('images/home_image.jpg'); " >
         <div class="container">
           <div class="row align-items-center justify-content-center">
-            <div class="col-md-12 col-lg-7 text-center">
-              <h1>Organized cases based on categories</h1>
-            
-
-              <p class="text-white"> The user will be able to go through their desire cases quite easily because all the cases are organized based on the category of the cases.</p>
-              <p><a href="#" class="btn btn-white-outline border-w-2 btn-md">Popular Cases</a></p>
-            </div>
-          </div>
+           
+        <div class="col-md-3 ">
+           <div class="row">
+  <div class="column">
+    <div class="card">..</div>
+  </div>
+  <div class="column">
+    <div class="card">..</div>
+  </div>
+  <div class="column">
+    <div class="card">..</div>
+  </div>
+  <div class="column">
+    <div class="card">..</div>
+  </div>
+</div> 
+</div> 
+</div>
         </div>
 
       </div>
