@@ -60,7 +60,7 @@ class SignupController extends Controller
 
 
 
-		$user = User::where('email',$email)
+		$user = User::where('email',$email)->orWhere('phone',$email)
 					->first();
         if(!$user)
         {

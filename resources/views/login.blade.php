@@ -18,7 +18,7 @@
                                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address or Phone') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control{{ $errors->has('email')|| $errors->has('email')?: old('phone') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                    <input id="email" type="text" class="form-control" name="email" required autofocus>
                                     @if ($errors->any())
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{$errors->first()}}</strong>
@@ -73,6 +73,6 @@
         </div>
     </div>
 
-    
+
 @endsection
 
