@@ -50,4 +50,23 @@ class UserController extends Controller
         $categories = Category::all();
         return view('about',compact('cases','categories'));
     }
+    public function search(Request $request)
+    {
+        $cases = LawCase::where('title','like', '%' .$request->search. '%')
+                        ->orWhere('year','like', '%' .$request->search. '%')
+                        ->orWhere('judges','like', '%' .$request->search. '%')
+                        ->orWhere('petitioner','like', '%' .$request->search. '%')
+                        ->get();
+        return $cases;
+    }
+    public function searchResult(Request $request)
+    {
+        $cases = LawCase::where('title','like', '%' .$request->search. '%')
+            ->orWhere('year','like', '%' .$request->search. '%')
+            ->orWhere('judges','like', '%' .$request->search. '%')
+            ->orWhere('petitioner','like', '%' .$request->search. '%')
+            ->get();
+        $categories = Category::all();
+        return view('cases',compact('cases','categories'));
+    }
 }

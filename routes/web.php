@@ -18,6 +18,8 @@ Route::post('signup', 'SignupController@signUp');
 Route::get('login', 'SignupController@loginForm');
 Route::post('login', 'SignupController@login');
 Route::get('about', 'UserController@about');
+Route::get('search', 'UserController@search');
+Route::get('search-results/{search}', 'UserController@searchResult');
 
 
 Route::group(['middleware' => ['user_auth']], function () {
@@ -31,6 +33,7 @@ Route::group(['middleware' => ['user_auth']], function () {
 Route::group(['middleware' => ['admin_auth'], 'prefix' => 'admin'], function () {
 
         Route::get('/home', 'AdminController@index');
+
 
         Route::get('/categories', 'AdminController@categories');
         Route::get('/add-category', 'AdminController@addCategory');

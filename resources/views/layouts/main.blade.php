@@ -27,7 +27,7 @@
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-  <div class="site-wrap"  id="home-section">
+  <html class="site-wrap"  id="home-section">
 
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
@@ -48,22 +48,22 @@
 
             <div class="site-logo">
                 <img src="{{URL::to('/')}}/images/lawlogo.png" style="width: 50px">
-              <a href="{{url('/')}}" class="text-black"><span class="text-primary"><i>Law Library</i></a>
+                <a href="{{url('/')}}" class="text-black"><span class="text-primary"><i>Law Library</i></span></a>
             </div>
 
 
 
-                <nav class="site-navigation text-center ml-auto" role="navigation">
+                <div class="site-navigation text-center ml-auto" role="navigation">
 
-            <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+            <div class="site-menu main-menu ml-auto d-none d-lg-block">
 
 
-                    <li >
 
-                        <input type="text" style="height: 2.2rem;width: 22rem" placeholder="Search Anything">
 
-                        <button class="btn btn-primary">Search</button>
-                    </li>
+                        <input type="text" name="search" id="search" style="height: 2.2rem;width: 20rem" list="result" placeholder="Search Anything">
+                        <datalist id="result"></datalist>
+                        <button class="btn btn-primary" id="search-btn">Search</button>
+
                 @if(session('role')=='admin')
                 <li class="nav-item"><a class="nav-link text-secondary" href={{url('/admin/home')}}>Admin Home</a></li>
                 @else
@@ -94,14 +94,15 @@
                             @endif
                             </li>
 
-                </ul>
-              </nav>
+                </div>
+              </div>
 
 
 
           <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
         </div>
+      </div>
 
 
 
@@ -111,7 +112,7 @@
 
      <body>
         @yield('content')
-    </body>
+
 
   <script src="{{URL::to('/')}}/js/jquery-ui.js"></script>
   <script src="{{URL::to('/')}}/js/popper.min.js"></script>
@@ -123,14 +124,56 @@
   <script src="{{URL::to('/')}}/js/jquery.waypoints.min.js"></script>
   <script src="{{URL::to('/')}}/js/jquery.animateNumber.min.js"></script>
   <script src="{{URL::to('/')}}/js/aos.js"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-  <script src="{{URL::to('/')}}/js/main.js"></script>
+
+      <script src="{{URL::to('/')}}/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</html>
+  <script>
+
+      $('#search-btn').on('click',function () {
+
+          let text = $('#search').val();
+          window.location.href = '/search-results/' + text;
+        /*  return false;*/
+      });
 
 
+  </script>
+  <script type="text/javascript">
+          $('#search').on('keyup',function(){
+              let value = $(this).val();
+              axios.get(`{{url('search')}}`,{
+                  params: {
+                      search : value
+              }}).then(response => {
+                  console.log(response.data)
+                  $('#result').empty();
+                  $.each(response.data, function(key, value) {
+                      $('#result').append('<option value="'+ value.title +'">'+ value.title +'</option>');
+                  });
+                      /*response.data.map(function(option) {
+                          let $option = $('<option>');
+
+                          $option
+                              .val(option.title)
+                              .text(option.title);
+
+                          $('#result').append($option);
+                      })*/
+              }).catch(e => {
+                  console.log('error',e)
+              })
+
+          })
+      </script>
+
+
+
+     </body>
+  </html>
 
 
 
